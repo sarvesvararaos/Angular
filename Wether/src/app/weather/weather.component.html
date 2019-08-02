@@ -1,0 +1,35 @@
+
+
+
+
+<input type="text" name="" value=""  placeholder="Please enter the city's name" class= "textb" #cityName>
+<script>
+var stauts: undefined;
+
+  </script>
+<button type= "button" name="button" class= "buttonb"(click)="this.getWeather(cityName.value, status)">Search</button>
+<script>
+
+  </script>
+<div class="currentCity">
+  <table border="1" class="tableb" id="t1">
+    <tr *ngIf="this.currentCityWeather !== undefined">
+      <td>{{this.currentCityWeather.cityName}} </td>
+      <td *ngFor="let v of this.currentCityWeather.values" > {{v}} </td>
+      </tr>
+        </table>
+        </div>
+
+<div class= "pastSearches">
+  <p class="ps"> Past Search </p>
+  <table border="1" class="tableb1" >
+<tr *ngFor="let pastWeather of this.pastSearchValue">
+      <td>{{pastWeather.cityName}} </td>
+      <td>{{pastWeather.searchTime[0]}}{{pastWeather.searchTime[1]}}{{pastWeather.searchTime[2]}}{{pastWeather.searchTime[3]}}{{pastWeather.searchTime[4]}}</td>
+
+      <td *ngFor="let v of this.currentCityWeather.values" > {{v}} </td>
+      </tr>
+        </table>
+        </div>
+
+<button type= "button" name="button2" class= "buttonb2"(click)="this.clear(cityName.value)">Clear</button>
